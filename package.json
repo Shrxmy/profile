@@ -1,0 +1,33 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Paulo's website, improved from last one since this might be used as a portfolio in the future.",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "prettier": "prettier -write .",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Paulo Tumabing<shrxmy>",
+  "license": "MIT",
+  "dependencies": {
+    "@chakra-ui/icons": "^1.1.7",
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "framer-motion": "^6.3.0",
+    "next": "^12.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.4.0",
+    "react-twitter-embed": "^4.0.4",
+    "three": "^0.139.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-next": "^12.1.5",
+    "prettier": "^2.6.2"
+  }
+}
