@@ -10,4 +10,4 @@ The 3D model was based on ["Yuna Figure (World of Final Fantasy)"](https://sketc
 Pretty cute model NGL but you can get more cute and great models from [Sketchfab](https://sketchfab.com/).
 
 BTW the code here is all typed by me, I mainly was just following lines throughout the video but at the same time my format of code is different and also I have added more things than what you can normally see on the video.
-It's a matter of learning code so I reccomend typing the code as you can understand the problem and at the same time learn something new.
+It's a matter of learning code so I reccomend typing the code as you can understand the problem and at the same time learn something else aside from what is taught.
