@@ -184,6 +184,15 @@ const Page = () => {
                                 Shroomy#9393
                             </Button>          
                         </ListItem>
+                        <ListItem>
+                            <Button 
+                            variant="ghost"
+                            colorScheme="teal"
+                            leftIcon={<IoLogoDiscord />}
+                            >
+                                Lucete#6860
+                            </Button>          
+                        </ListItem>
                     </List>
 
                     <Box align="center" my={4}>
