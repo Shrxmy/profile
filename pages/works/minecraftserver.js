@@ -83,9 +83,7 @@ const Work = () => {
 
                 <Box p='2' />
 
-                <WorkImage src="/images/work/minecraftdns.png" alt= "Minecraft"/>
-                    
-                <Box p='2' />
+                <WorkImage src="/images/work/minecraftdns.png" alt= "Minecraft"/> 
             </Container>
         </Layout>
     )
