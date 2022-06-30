@@ -1,4 +1,4 @@
-# profile
+# Profile
 My Profile Website/Homepage
 
 The main design and inspiration was based of [craftdogz](https://www.craftz.dog/) homepage. I just added a spice of my design taste and creativity at the same time.
