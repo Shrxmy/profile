@@ -72,6 +72,8 @@ const Work = () => {
                         </ListItem>
                     </List>
                 </Box>
+
+                <Box p='2' />
             </Container>
         </Layout>
     )
