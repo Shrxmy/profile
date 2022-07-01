@@ -54,7 +54,7 @@ const Page = () => {
                 </Box>
 
                 <Box borderRadius="lg" bg="teal" p={3} mb={4} align="center">
-                Hello, I'm a average student developer.
+                Hello, I'm an average student developer.
                 </Box>
 
                 <Section delay={0.1}>
