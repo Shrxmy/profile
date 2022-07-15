@@ -154,13 +154,13 @@ const Page = () => {
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href="https://twitter.com/lucewizaltis" target="_blank">
+                            <Link href= "https://twitter.com/luceizbit" target="_blank">
                                 <Button 
                                 variant="ghost"
                                 colorScheme="teal"
                                 leftIcon={<IoLogoTwitter />}
                                 >
-                                    @lucewizaltis (stan acc)
+                                    @luceizbit (stan acc)
                                 </Button>
                             </Link>
                         </ListItem>
