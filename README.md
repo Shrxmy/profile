@@ -12,4 +12,8 @@ Pretty cute model NGL but you can get more cute and great models from [Sketchfab
 BTW the code here is all typed by me, I mainly was just following lines throughout the video but at the same time my format of code is different and also I have added more things than what you can normally see on the video.
 It's a matter of learning code so I reccomend typing the code as you can understand the problem and at the same time learn something else aside from what is taught.
 
-#Lis
+#License
+
+You can fork the project and make your own homepage/website as long as you credit craftzdog by putting a link of his website on yours. You can credit me if you want but what is more important is you link craftzdog's homepage.
+
+The Yuna figure is also usable as long as you credit Robukan and his license in your homepage as well. If you don't want to, you have to create your own Blender model with the .gltf or glb file format.
