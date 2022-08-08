@@ -30,7 +30,7 @@ export const Meta = ({ children }) => (
 
 export const TwtTitle = ({ children }) => (
     <Box>
-        <NextLink href="/works" passHref>
+        <NextLink href="/" passHref>
             <Link>Twitter Feeds</Link>
         </NextLink>
         <span>
