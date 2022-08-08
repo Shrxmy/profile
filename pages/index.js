@@ -49,7 +49,7 @@ const Page = () => {
                         <Heading as="h2" variant="page-title">
                             Hello?
                         </Heading>
-                        <div>Average B Student (Developer / Teaholic / K-pop Stan)</div>
+                        <div>Average B Student (Developer / Teaholic / Caratbit)</div>
                     </Box>
                 </Box>
 
