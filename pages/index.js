@@ -110,7 +110,7 @@ const Page = () => {
                     </Heading>
                     <Box p='1' />
                     <Paragraph>
-                    Electric Guitar, Programing, Eating, Practicality, Being Single, Music, Final Fantasy, Megami Tensei, Pokemon, and JinSoul
+                    Electric Guitar, Programing, Photography, Practicality, Film Cameras, Music, Final Fantasy, Megami Tensei, Pokemon, and JinSoul
                     </Paragraph>
                 </Section>
 
