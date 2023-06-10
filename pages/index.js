@@ -62,7 +62,7 @@ const Page = () => {
                         About Me
                     </Heading>
                     <Box p='1' />
-                    <Paragraph>Hello, my name is Paulo, and I am a STEM strand student at Ateneo de Iloilo. I've created {' '}<NextLink href="/works/minty"><Link>Discord bots</Link></NextLink>, websites, and Minecraft servers. I am currently studying web applications and game development. I like programming and tea since both of these are soothing activities that need time to prepare. Being a realistic person, I prioritize what is vital to me and what I need above settling for things that don't provide much value. I also socialize a lot with friends, and I would like the opportunity to meet new people at the same time. Also, I stan LOOΠΔ and SEVENTEEN.</Paragraph>
+                    <Paragraph>Hello, my name is Paulo, and I am a STEM strand graduate at Ateneo de Iloilo. I've created {' '}<NextLink href="/works/minty"><Link>Discord bots</Link></NextLink>, websites, and Minecraft servers. I am currently studying web applications and game development. I like programming and tea since both of these are soothing activities that need time to prepare. Being a realistic person, I prioritize what is vital to me and what I need above settling for things that don't provide much value. I also socialize a lot with friends, and I would like the opportunity to meet new people at the same time. Also, I stan LOOΠΔ and SEVENTEEN.</Paragraph>
                     
                     <Box align="center" my={4}>
                         <NextLink href="/works">
