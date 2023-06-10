@@ -84,7 +84,7 @@ const Page = () => {
                         </BioSection>
                         <BioSection>
                             <BioYear>Age:</BioYear>
-                            17
+                            18
                         </BioSection>
                         <BioSection>
                             <BioYear>MBTI:</BioYear>
