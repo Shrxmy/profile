@@ -80,7 +80,7 @@ const Page = () => {
                     <Box p='1' />
                         <BioSection>
                             <BioYear>Gender:</BioYear>
-                            Male (he/him)
+                            Male (he/they)
                         </BioSection>
                         <BioSection>
                             <BioYear>Age:</BioYear>
@@ -110,7 +110,7 @@ const Page = () => {
                     </Heading>
                     <Box p='1' />
                     <Paragraph>
-                    Electric Guitar, Programing, Photography, Practicality, Film Cameras, Music, Final Fantasy, Megami Tensei, Pokemon, and JinSoul
+                    Electric Guitar, Programming, Photography, Practicality, Film Cameras, Music, Final Fantasy, Megami Tensei, Pokemon, and JinSoul
                     </Paragraph>
                 </Section>
 
