@@ -80,7 +80,7 @@ const Page = () => {
                     <Box p='1' />
                         <BioSection>
                             <BioYear>Gender:</BioYear>
-                            Male (he/him)
+                            Male (he/they)
                         </BioSection>
                         <BioSection>
                             <BioYear>Age:</BioYear>
