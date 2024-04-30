@@ -84,7 +84,7 @@ const Page = () => {
                         </BioSection>
                         <BioSection>
                             <BioYear>Age:</BioYear>
-                            18
+                            19
                         </BioSection>
                         <BioSection>
                             <BioYear>MBTI:</BioYear>
@@ -139,28 +139,6 @@ const Page = () => {
                                 leftIcon={<IoLogoInstagram />}
                                 >
                                     @paulucete_
-                                </Button>
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href="https://twitter.com/shrxmy" target="_blank">
-                                <Button 
-                                variant="ghost"
-                                colorScheme="teal"
-                                leftIcon={<IoLogoTwitter />}
-                                >
-                                    @shrxmy (priv acc)
-                                </Button>
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link href= "https://twitter.com/luceizbit" target="_blank">
-                                <Button 
-                                variant="ghost"
-                                colorScheme="teal"
-                                leftIcon={<IoLogoTwitter />}
-                                >
-                                    @luceizbit (stan acc)
                                 </Button>
                             </Link>
                         </ListItem>
