@@ -1,4 +1,5 @@
-import { Container, Badge, Link, Links, ListItem, List, Box } from '@chakra-ui/react';
+/* eslint-disable react/no-unescaped-entities */
+import { Container, Badge, ListItem, List, Box } from '@chakra-ui/react';
 import { Title, WorkImage, Meta } from '../../components/pageprops';
 import P from '../../components/paragraphs';
 import Layout from '../../components/layouts/article';
@@ -28,10 +29,10 @@ const Work = () => {
                 <Box maxW='lg' borderWidth='1px' borderColor='grey' borderRadius='xl' overflow='hidden'>
                     <List ml={30} my={4}>
                         <ListItem>
-                            <Meta>Invite Link:</Meta>
-                            <Link href='https://discord.com/api/oauth2/authorize?client_id=835411376947986462&permissions=8&scope=applications.commands%20bot'>
-                                Invite Minty~ with this link!
-                            </Link>
+                            <Meta>Updates:</Meta>
+                            <span>
+                                Minty~ is currently offline and will be back soon!(Until I retrive the source code from my old hard drive.)
+                            </span>
                         </ListItem>
                         <ListItem>
                             <Meta>Used Languages:</Meta>
@@ -45,18 +46,18 @@ const Work = () => {
                                 SQL and Mongo DB
                             </span>
                         </ListItem>
-                            <Meta>Required Permissions:</Meta>
-                            <span>
-                                Administrator
-                            </span>
+                        <Meta>Required Permissions:</Meta>
+                        <span>
+                            Administrator
+                        </span>
                     </List>
                 </Box>
 
                 <Box p='2' />
 
-                <WorkImage src="/images/work/minty1.png" alt= "Minty~"/>
-                <WorkImage src="/images/work/minty2.png" alt= "Minty~"/>
-                <WorkImage src="/images/work/minty3.png" alt= "Minty~"/>
+                <WorkImage src="/images/work/minty1.png" alt="Minty~" />
+                <WorkImage src="/images/work/minty2.png" alt="Minty~" />
+                <WorkImage src="/images/work/minty3.png" alt="Minty~" />
             </Container>
         </Layout>
     )

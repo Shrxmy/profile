@@ -1,7 +1,7 @@
-import { Container, Badge, Link, List, ListItem, Heading, Box, Tag, Text} from '@chakra-ui/react';
+/* eslint-disable react/no-unescaped-entities */
+import { Container, Badge, Link, List, ListItem, Box, Tag } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Title, WorkImage, Meta } from '../../components/pageprops';
-import P from '../../components/paragraphs';
 import Layout from '../../components/layouts/article';
 
 const Work = () => {
@@ -27,7 +27,7 @@ const Work = () => {
                         </p>
                         <Box p='1' />
                         <p>
-                            - Next step, open the <Tag>run.bat</Tag> and wait for the terminal to load the server world. With that done, open Minecraft and choose Multiplayer => Direct Connect and type <Tag>localhost</Tag>. Boom, you are in your server however, if you are experiencing difficulties connecting heres the help.
+                            - Next step, open the <Tag>run.bat</Tag> and wait for the terminal to load the server world. With that done, open Minecraft and choose Multiplayer =&gt; Direct Connect and type <Tag>localhost</Tag>. Boom, you are in your server however, if you are experiencing difficulties connecting heres the help.
                         </p>
                         <Box p='1' />
                         <p>
@@ -47,7 +47,7 @@ const Work = () => {
                         </p>
                         <Box p='1' />
                         <p>
-                            - If your friends have issues connecting with the server mainly having an error <Tag>Unknown Host</Tag> all you have to do is go to your Control Panel => Network and Internet => Network and Sharing Center => Change Adapter Settings (On the left) => Double click the connection you are using => Properties =>  Internet Protocol Version 4
+                            - If your friends have issues connecting with the server mainly having an error <Tag>Unknown Host</Tag> all you have to do is go to your Control Panel =&gt; Network and Internet =&gt; Network and Sharing Center =&gt; Change Adapter Settings (On the left) =&gt; Double click the connection you are using =&gt; Properties =&gt;  Internet Protocol Version 4
                         </p>
                         <Box p='1' />
                         <p>
@@ -83,7 +83,7 @@ const Work = () => {
 
                 <Box p='2' />
 
-                <WorkImage src="/images/work/minecraftdns.png" alt= "Minecraft"/> 
+                <WorkImage src="/images/work/minecraftdns.png" alt="Minecraft" />
             </Container>
         </Layout>
     )

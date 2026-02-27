@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Container, Badge, Link, List, ListItem, Box } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Title, WorkImage, Meta } from '../../components/pageprops';
@@ -17,9 +18,9 @@ const Work = () => {
                         mt='1'
                         as='h4'
                         lineHeight='tight'
-                    > 
+                    >
                         <P>
-                        LOKKO Gaming — an organization founded/established to enhance and advance upcoming youth players in Iloilo. Promoting active participation of e-sports in the area — With various events, well-embedded in the content distribution and gaming world. 
+                            LOKKO Gaming — an organization founded/established to enhance and advance upcoming youth players in Iloilo. Promoting active participation of e-sports in the area — With various events, well-embedded in the content distribution and gaming world.
                         </P>
                     </Box>
                 </Box>
@@ -46,17 +47,17 @@ const Work = () => {
                                 https://www.facebook.com/Lokko.Org <ExternalLinkIcon mx="2px" />
                             </Link>
                         </ListItem>
-                            <Meta>Discord:</Meta>
-                            <Link href='https://discord.gg/YqMJHG6crj'>
-                                https://discord.gg/LokkoOfficial <ExternalLinkIcon mx="2px" />
-                            </Link>
+                        <Meta>Discord:</Meta>
+                        <Link href='https://discord.gg/YqMJHG6crj'>
+                            https://discord.gg/LokkoOfficial <ExternalLinkIcon mx="2px" />
+                        </Link>
                     </List>
                 </Box>
 
                 <Box p='2' />
-                
-                <WorkImage src="/images/work/lokko1.png" alt= "LOKKO Website"/>
-                <WorkImage src="/images/work/lokko2.png" alt= "LOKKO Website"/>
+
+                <WorkImage src="/images/work/lokko1.png" alt="LOKKO Website" />
+                <WorkImage src="/images/work/lokko2.png" alt="LOKKO Website" />
             </Container>
         </Layout>
     )

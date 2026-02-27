@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Container, Badge, Link, List, ListItem, Heading, Divider, Box } from '@chakra-ui/react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Title, Meta } from '../../components/pageprops';
@@ -19,16 +20,16 @@ const Work = () => {
                         lineHeight='tight'
                     >
                         <P>
-                        - Disclaimer, I will only provide links for the Emulators I trust and use myself. I will not be providing any ROMs due to piracy issues and I know it may seem small but this is really a big issue especially on {' '}<Link href="https://kotaku.com/nintendo-piracy-case-bowser-xecuter-team-prison-pirate-1849026479"><Link>Nintendo's case</Link></Link>.
+                            - Disclaimer, I will only provide links for the Emulators I trust and use myself. I will not be providing any ROMs due to piracy issues and I know it may seem small but this is really a big issue especially on {' '}<Link href="https://kotaku.com/nintendo-piracy-case-bowser-xecuter-team-prison-pirate-1849026479"><Link>Nintendo's case</Link></Link>.
                         </P>
                         <P>
-                        - I provide these emulators for the people that are hesitant and have a feeling of getting a virus to feel the ease that these are all safe. Also, I am not associated with any of Nintendo, Sony, or even Microsoft's shenanigans and I am gaining no benefit from posting these files. It's all up to you guys to download these files especially the BIOSes which is quite on the grey side when finding and downloading these.
+                            - I provide these emulators for the people that are hesitant and have a feeling of getting a virus to feel the ease that these are all safe. Also, I am not associated with any of Nintendo, Sony, or even Microsoft's shenanigans and I am gaining no benefit from posting these files. It's all up to you guys to download these files especially the BIOSes which is quite on the grey side when finding and downloading these.
                         </P>
                         <P>
-                        - No, I have not tampered with anything on the emulators files to do bad things, that is unethical and very unhuman to do and I will never tolerate such acts.
+                            - No, I have not tampered with anything on the emulators files to do bad things, that is unethical and very unhuman to do and I will never tolerate such acts.
                         </P>
                         <P>
-                        - Credits to all the developers whom made these emulators, without them the nostalgia would never have been possible till this day. Also, If there are outdated files, please inform me through Discord or any social media contacts I provide.
+                            - Credits to all the developers whom made these emulators, without them the nostalgia would never have been possible till this day. Also, If there are outdated files, please inform me through Discord or any social media contacts I provide.
                         </P>
                     </Box>
                 </Box>
@@ -47,7 +48,7 @@ const Work = () => {
                     >
                         <Heading as="h3" fontSize={20}>Nintendo Emulators</Heading>
                     </Box>
-                    
+
                     <List ml={30} my={2}>
                         <Box p='2'>
                             <ListItem>
@@ -101,8 +102,8 @@ const Work = () => {
                         </Box>
                     </List>
                 </Box>
-                
-                <Box p='2'/>
+
+                <Box p='2' />
 
                 <Box maxW='lg' borderWidth='1px' borderColor='grey' borderRadius='xl' overflow='hidden'>
                     <Box
@@ -130,7 +131,7 @@ const Work = () => {
                                     PCSX2's Website <ExternalLinkIcon mx="1px" />
                                 </Link>
                                 <span>
-                                - I recommend downloading the Nightly release for this because of the better UI.
+                                    - I recommend downloading the Nightly release for this because of the better UI.
                                 </span>
                             </ListItem>
                             <ListItem>
@@ -173,7 +174,7 @@ const Work = () => {
                     </List>
                 </Box>
 
-                <Box p='2'/>
+                <Box p='2' />
 
                 <Box maxW='lg' borderWidth='1px' borderColor='grey' borderRadius='xl' overflow='hidden'>
                     <Box
@@ -184,7 +185,7 @@ const Work = () => {
                         fontSize='xs'
                         ml='4'
                     >
-                    <Heading align="left" as="h3" fontSize={20}>Microsoft Emulators</Heading>
+                        <Heading align="left" as="h3" fontSize={20}>Microsoft Emulators</Heading>
                     </Box>
 
                     <List ml={30} my={2}>
@@ -211,7 +212,7 @@ const Work = () => {
                     </List>
                 </Box>
 
-                <Box p='2'/>
+                <Box p='2' />
 
             </Container>
         </Layout>
