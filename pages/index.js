@@ -15,10 +15,7 @@ import {
     PopoverHeader,
     PopoverBody,
     useColorModeValue,
-    Tag,
-    TagLabel,
-    Wrap,
-    WrapItem,
+    Text,
 } from "@chakra-ui/react"
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Layout from '../components/layouts/article'
@@ -39,6 +36,8 @@ const getAge = () => {
 }
 
 const Page = () => {
+    const mutedText = useColorModeValue('gray.600', 'whiteAlpha.700')
+
     return (
         <Layout>
             <Container>
@@ -50,18 +49,11 @@ const Page = () => {
                     <Box
                         display="inline-block"
                         borderRadius="full"
-                        p="2px"
-                        bg="teal.400"
-                        boxShadow="0 0 20px rgba(56, 178, 172, 0.3)"
-                        transition="all 0.4s ease"
-                        _hover={{
-                            boxShadow: '0 0 35px rgba(56, 178, 172, 0.5)',
-                            transform: 'scale(1.05)',
-                        }}
+                        p="1px"
                     >
                         <Image
-                            borderColor={useColorModeValue('#f0e7db', '#202023')}
-                            borderWidth={3}
+                            borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.300')}
+                            borderWidth={2}
                             borderStyle="solid"
                             maxWidth="100px"
                             display="inline-block"
@@ -109,14 +101,15 @@ const Page = () => {
                     </Heading>
                     <Box p='1' />
                     <Paragraph>
-                        Hello! My name is Paulo, and I am a Computer Science student at the University of Santo Tomas. Over the years, I&apos;ve enjoyed building numerous projects ranging from {' '}<NextLink href="/works/minty~" passHref><Link>Discord bots</Link></NextLink> and full-stack web applications to custom Minecraft servers. Currently, my academic and personal focus is on learning modern web development and exploring game design. Programming and making tea are two of my favorite pastimes; both require patience, precision, and yield satisfying results. I am a pragmatic person who prioritizes meaningful work and values continuous learning. I also enjoy collaborating with others and am always open to connecting with new people. Also, I proudly stan LOOΠΔ and SEVENTEEN.
+                        Hello! My name is Paulo, and I am a Computer Science student at the University of Santo Tomas. Over the years, I&apos;ve enjoyed building numerous projects ranging from Discord bots and full-stack web applications to custom Minecraft servers. Currently, my academic and personal focus is on learning modern web development and exploring game design. Programming and making tea are two of my favorite pastimes; both require patience, precision, and yield satisfying results. I am a pragmatic person who prioritizes meaningful work and values continuous learning. I also enjoy collaborating with others and am always open to connecting with new people. Also, I proudly stan LOOΠΔ and SEVENTEEN.
                     </Paragraph>
 
                     <Box align="center" my={4}>
                         <NextLink href="/works" passHref>
                             <Button
                                 rightIcon={<ChevronRightIcon />}
-                                colorScheme="teal"
+                                bg="teal"
+                                color="white"
                                 size="md"
                                 borderRadius="lg"
                                 fontWeight="600"
@@ -158,7 +151,8 @@ const Page = () => {
                         <Link href="https://open.spotify.com/user/jptgumban" isExternal>
                             <Button
                                 rightIcon={<ChevronRightIcon />}
-                                colorScheme="teal"
+                                bg="teal"
+                                color="white"
                                 size="md"
                                 borderRadius="lg"
                                 fontWeight="600"
@@ -179,28 +173,9 @@ const Page = () => {
                         Hobbies and Likes
                     </Heading>
                     <Box p='1' />
-                    <Wrap spacing={2}>
-                        {['Electric Guitar', 'Programming', 'Photography', 'Practicality', 'Film Cameras', 'Music', 'Final Fantasy', 'Megami Tensei', 'Pokemon', 'JinSoul'].map((hobby) => (
-                            <WrapItem key={hobby}>
-                                <Tag
-                                    size="md"
-                                    borderRadius="full"
-                                    variant="subtle"
-                                    colorScheme="teal"
-                                    px={3}
-                                    py={1}
-                                    transition="all 0.2s ease"
-                                    _hover={{
-                                        transform: 'translateY(-2px)',
-                                        boxShadow: '0 2px 8px rgba(56, 178, 172, 0.2)',
-                                    }}
-                                    cursor="default"
-                                >
-                                    <TagLabel fontSize="sm">{hobby}</TagLabel>
-                                </Tag>
-                            </WrapItem>
-                        ))}
-                    </Wrap>
+                    <Text color={mutedText} lineHeight="1.8">
+                        Electric Guitar · Programming · Photography · Practicality · Film Cameras · Music · Final Fantasy · Megami Tensei · Pokemon · JinSoul
+                    </Text>
                 </Section>
 
                 <Section delay={0.3}>
@@ -210,71 +185,55 @@ const Page = () => {
                     <Box p='1' />
                     <List spacing={1}>
                         <ListItem>
-                            <Link href="https://www.linkedin.com/in/paulo-tumabing/" target="_blank">
-                                <Button
-                                    variant="ghost"
-                                    colorScheme="teal"
-                                    leftIcon={<IoLogoLinkedin />}
-                                    borderRadius="lg"
-                                    _hover={{
-                                        transform: 'translateX(4px)',
-                                        bg: useColorModeValue('teal.50', 'whiteAlpha.100'),
-                                    }}
-                                    transition="all 0.2s ease"
-                                >
-                                    Paulo Tumabing
-                                </Button>
+                            <Link
+                                href="https://www.linkedin.com/in/paulo-tumabing/"
+                                target="_blank"
+                                color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+                                display="inline-flex"
+                                alignItems="center"
+                                _hover={{ textDecoration: 'underline' }}
+                            >
+                                <Box as={IoLogoLinkedin} color="teal" mr={2} />
+                                Paulo Tumabing
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href="https://github.com/Shrxmy" target="_blank">
-                                <Button
-                                    variant="ghost"
-                                    colorScheme="teal"
-                                    leftIcon={<IoLogoGithub />}
-                                    borderRadius="lg"
-                                    _hover={{
-                                        transform: 'translateX(4px)',
-                                        bg: useColorModeValue('teal.50', 'whiteAlpha.100'),
-                                    }}
-                                    transition="all 0.2s ease"
-                                >
-                                    Shrxmy
-                                </Button>
+                            <Link
+                                href="https://github.com/Shrxmy"
+                                target="_blank"
+                                color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+                                display="inline-flex"
+                                alignItems="center"
+                                _hover={{ textDecoration: 'underline' }}
+                            >
+                                <Box as={IoLogoGithub} color="teal" mr={2} />
+                                Shrxmy
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href="mailto:joevannipaulo0425.tumabing@gmail.com" target="_blank">
-                                <Button
-                                    variant="ghost"
-                                    colorScheme="teal"
-                                    leftIcon={<IoMail />}
-                                    borderRadius="lg"
-                                    _hover={{
-                                        transform: 'translateX(4px)',
-                                        bg: useColorModeValue('teal.50', 'whiteAlpha.100'),
-                                    }}
-                                    transition="all 0.2s ease"
-                                >
-                                    joevannipaulo0425.tumabing@gmail.com
-                                </Button>
+                            <Link
+                                href="mailto:joevannipaulo0425.tumabing@gmail.com"
+                                target="_blank"
+                                color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+                                display="inline-flex"
+                                alignItems="center"
+                                _hover={{ textDecoration: 'underline' }}
+                            >
+                                <Box as={IoMail} color="teal" mr={2} />
+                                joevannipaulo0425.tumabing@gmail.com
                             </Link>
                         </ListItem>
                         <ListItem>
-                            <Link href="https://steamcommunity.com/id/shrxmy/" target="_blank">
-                                <Button
-                                    variant="ghost"
-                                    colorScheme="teal"
-                                    leftIcon={<IoLogoSteam />}
-                                    borderRadius="lg"
-                                    _hover={{
-                                        transform: 'translateX(4px)',
-                                        bg: useColorModeValue('teal.50', 'whiteAlpha.100'),
-                                    }}
-                                    transition="all 0.2s ease"
-                                >
-                                    Shroomy
-                                </Button>
+                            <Link
+                                href="https://steamcommunity.com/id/shrxmy/"
+                                target="_blank"
+                                color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+                                display="inline-flex"
+                                alignItems="center"
+                                _hover={{ textDecoration: 'underline' }}
+                            >
+                                <Box as={IoLogoSteam} color="teal" mr={2} />
+                                Shroomy
                             </Link>
                         </ListItem>
                     </List>
@@ -283,8 +242,8 @@ const Page = () => {
                         <Popover>
                             <PopoverTrigger>
                                 <Button
-                                    variant="outline"
-                                    colorScheme="teal"
+                                    bg="teal"
+                                    color="white"
                                     borderRadius="lg"
                                     size="sm"
                                     _hover={{

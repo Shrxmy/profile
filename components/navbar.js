@@ -26,7 +26,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
         <NextLink href={href} passHref scroll={false}>
             <Link
                 p={2}
-                bg={active ? 'teal.500' : undefined}
+                bg={active ? 'teal' : undefined}
                 color={active ? '#ffffff' : inactiveColor}
                 target={target}
                 borderRadius='lg'
@@ -35,7 +35,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
                 letterSpacing='0.02em'
                 _hover={{
                     textDecoration: 'none',
-                    bg: active ? 'teal.500' : hoverBgColor,
+                    bg: active ? 'teal' : hoverBgColor,
                     transform: 'translateY(-1px)',
                 }}
                 transition='all 0.2s ease'

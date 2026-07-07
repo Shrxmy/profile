@@ -13,6 +13,8 @@ const thumbBondCalc = '/images/work/bondcalcthumb.png'
 const thumbCSSApply = '/images/work/cssapplythumb.png'
 const thumbDWH = '/images/work/dwhthumb.png'
 const thumbProfile = '/images/work/profilethumb.png'
+const thumbAGML = '/images/work/agml-densecbam.jpg'
+const thumbEmuGBDS = '/images/work/emugbds.jpg'
 
 const Works = () => {
     return (
@@ -23,6 +25,40 @@ const Works = () => {
                 </Heading>
 
                 <SimpleGrid columns={[1, 1, 2]} gap={6}>
+                    <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
+                        <Section>
+                            <Box
+                                mt='1'
+                                as='h4'
+                                lineHeight='tight'
+                                letterSpacing='wide'
+                                borderRadius='lg'
+                                p='1'
+                            >
+                                <WorkGridItem id="agml-densecbam" title="AGML-DenseCBAM" thumbnail={thumbAGML}>
+                                    Attention-guided multi-task learning framework for TMD classification using panoramic radiographs.
+                                </WorkGridItem>
+                            </Box>
+                        </Section>
+                    </Box>
+
+                    <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
+                        <Section>
+                            <Box
+                                mt='1'
+                                as='h4'
+                                lineHeight='tight'
+                                letterSpacing='wide'
+                                borderRadius='lg'
+                                p='1'
+                            >
+                                <WorkGridItem id="emugbds" title="emuGBDS" thumbnail={thumbEmuGBDS}>
+                                    Clean-room emulator host focused on in-house GBA and DS core development.
+                                </WorkGridItem>
+                            </Box>
+                        </Section>
+                    </Box>
+
                     <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
                         <Section>
                             <Box

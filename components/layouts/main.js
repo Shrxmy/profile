@@ -11,8 +11,10 @@ const LazyMushroom = dynamic(() => import('../mushroom'), {
 })
 
 const Main = ({ children, router }) => {
+    const hideModel = router.asPath.startsWith('/tea-room')
+
     return (
-        <Box as= "main" pb={8}>
+        <Box as="main" pb={8}>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="description" content="Paulo's homepage" />
@@ -24,10 +26,10 @@ const Main = ({ children, router }) => {
             </Head>
 
             <Navbar path={router.asPath} />
-        
+
             <Container maxW="container.md" pt={14}>
-                <LazyMushroom />
-                
+                {!hideModel && <LazyMushroom />}
+
                 {children}
 
                 <Footer />
