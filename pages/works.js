@@ -1,212 +1,149 @@
-/* eslint-disable react/no-unescaped-entities */
-import { Container, Heading, SimpleGrid, Divider, Box } from "@chakra-ui/react";
-import React from "react";
-import Section from '../components/sections'
+import {
+    Box,
+    Container,
+    Heading,
+    SimpleGrid,
+    Text,
+    useColorModeValue
+} from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
-import { WorkGridItem } from "../components/grid-item";
+import Section from '../components/sections'
+import { WorkGridItem } from '../components/grid-item'
 
-const thumbMinty = '/images/work/mintybot.jpg'
-const thumbLokko = '/images/work/lokkoorg.jpg'
-const thumbEmulators = '/images/work/emulatorthumb.jpg'
-const thumbMinecraft = '/images/work/minecraftthumb.jpg'
-const thumbBondCalc = '/images/work/bondcalcthumb.png'
-const thumbCSSApply = '/images/work/cssapplythumb.png'
-const thumbDWH = '/images/work/dwhthumb.png'
-const thumbProfile = '/images/work/profilethumb.png'
-const thumbAGML = '/images/work/agml-densecbam.jpg'
-const thumbEmuGBDS = '/images/work/emugbds.jpg'
+const projects = [
+    {
+        id: 'agml-densecbam',
+        title: 'AGML-DenseCBAM',
+        category: 'Machine learning research',
+        thumbnail: '/images/work/agml-densecbam.jpg',
+        description: 'Attention-guided multi-task learning for TMD classification using panoramic radiographs.'
+    },
+    {
+        id: 'emugbds',
+        title: 'emuGBDS',
+        category: 'Emulation research',
+        thumbnail: '/images/work/emugbds.jpg',
+        description: 'A clean-room emulator host focused on in-house GBA and DS core development.'
+    },
+    {
+        id: 'cssapply',
+        title: 'CSSApply',
+        category: 'Web application',
+        thumbnail: '/images/work/cssapplythumb.png',
+        description: 'A recruitment portal for the University of Santo Tomas Computer Science Society.'
+    },
+    {
+        id: 'shopzadadwh',
+        title: 'ShopZada Data Warehouse',
+        category: 'Data engineering',
+        thumbnail: '/images/work/dwhthumb.png',
+        description: 'An end-to-end warehouse orchestrated with Airflow and loaded into PostgreSQL.'
+    },
+    {
+        id: 'bondcalculator',
+        title: 'Bond Calculator',
+        category: 'Data application',
+        thumbnail: '/images/work/bondcalcthumb.png',
+        description: 'A Streamlit app for bond prices, yields, duration, and yield curve analysis.'
+    },
+    {
+        id: 'profilewebsite',
+        title: 'Profile Website',
+        category: 'Personal site',
+        thumbnail: '/images/work/profilethumb.png',
+        description: 'This site, shaped by experiments in Next.js, Chakra UI, Three.js, and writing.'
+    },
+    {
+        id: 'minty~',
+        title: 'Minty~',
+        category: 'Discord bot',
+        thumbnail: '/images/work/mintybot.jpg',
+        description: 'A K-pop inspired Discord bot with moderation, music, greetings, and updates.'
+    },
+    {
+        id: 'lokkowebsite',
+        title: 'LOKKO Org.',
+        category: 'Community website',
+        thumbnail: '/images/work/lokkoorg.jpg',
+        description: 'A website for an organization supporting youth esports players in Iloilo.'
+    }
+]
+
+const usefulLinks = [
+    {
+        id: 'emulatorfiles',
+        title: 'Emulator Files',
+        category: 'Reference library',
+        thumbnail: '/images/work/emulatorthumb.jpg',
+        description: 'A curated collection of emulator links and notes for people who want a safer starting point.'
+    },
+    {
+        id: 'minecraftserver',
+        title: 'Minecraft Servers',
+        category: 'Community resource',
+        thumbnail: '/images/work/minecraftthumb.jpg',
+        description: 'Downloadable Forge server setups and practical notes for playing with friends.'
+    }
+]
 
 const Works = () => {
+    const mutedText = useColorModeValue('ink.500', 'whiteAlpha.700')
+    const borderColor = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
+
     return (
-        <Layout>
-            <Container>
-                <Heading as="h3" fontSize={20} mb={4}>
-                    Projects
-                </Heading>
-
-                <SimpleGrid columns={[1, 1, 2]} gap={6}>
-                    <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
-                        <Section>
-                            <Box
-                                mt='1'
-                                as='h4'
-                                lineHeight='tight'
-                                letterSpacing='wide'
-                                borderRadius='lg'
-                                p='1'
-                            >
-                                <WorkGridItem id="agml-densecbam" title="AGML-DenseCBAM" thumbnail={thumbAGML}>
-                                    Attention-guided multi-task learning framework for TMD classification using panoramic radiographs.
-                                </WorkGridItem>
-                            </Box>
-                        </Section>
-                    </Box>
-
-                    <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
-                        <Section>
-                            <Box
-                                mt='1'
-                                as='h4'
-                                lineHeight='tight'
-                                letterSpacing='wide'
-                                borderRadius='lg'
-                                p='1'
-                            >
-                                <WorkGridItem id="emugbds" title="emuGBDS" thumbnail={thumbEmuGBDS}>
-                                    Clean-room emulator host focused on in-house GBA and DS core development.
-                                </WorkGridItem>
-                            </Box>
-                        </Section>
-                    </Box>
-
-                    <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
-                        <Section>
-                            <Box
-                                mt='1'
-                                as='h4'
-                                lineHeight='tight'
-                                letterSpacing='wide'
-                                borderRadius='lg'
-                                p='1'
-                            >
-                                <WorkGridItem id="cssapply" title="CSS Apply" thumbnail={thumbCSSApply}>
-                                    Computer Science Society Recruitment Portal — built with Next.js, TypeScript, Tailwind CSS and Prisma.
-                                </WorkGridItem>
-                            </Box>
-                        </Section>
-                    </Box>
-
-                    <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
-                        <Section>
-                            <Box
-                                mt='1'
-                                as='h4'
-                                lineHeight='tight'
-                                letterSpacing='wide'
-                                borderRadius='lg'
-                                p='1'
-                            >
-                                <WorkGridItem id="shopzadadwh" title="ShopZada DWH" thumbnail={thumbDWH}>
-                                    End-to-end Data Warehouse for ShopZada e-commerce, orchestrated with Apache Airflow and PostgreSQL.
-                                </WorkGridItem>
-                            </Box>
-                        </Section>
-                    </Box>
-
-                    <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
-                        <Section>
-                            <Box
-                                mt='1'
-                                as='h4'
-                                lineHeight='tight'
-                                letterSpacing='wide'
-                                borderRadius='lg'
-                                p='1'
-                            >
-                                <WorkGridItem id="bondcalculator" title="Bond Calculator" thumbnail={thumbBondCalc}>
-                                    A bond calculator web app with yield curve analysis, built with Python and Streamlit.
-                                </WorkGridItem>
-                            </Box>
-                        </Section>
-                    </Box>
-
-                    <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
-                        <Section>
-                            <Box
-                                mt='1'
-                                as='h4'
-                                lineHeight='tight'
-                                letterSpacing='wide'
-                                borderRadius='lg'
-                                p='1'
-                            >
-                                <WorkGridItem id="profilewebsite" title="Profile Website" thumbnail={thumbProfile}>
-                                    This homepage — built with Next.js, Chakra UI, Three.js and Framer Motion.
-                                </WorkGridItem>
-                            </Box>
-                        </Section>
-                    </Box>
-
-                    <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
-                        <Section>
-                            <Box
-                                mt='1'
-                                as='h4'
-                                lineHeight='tight'
-                                letterSpacing='wide'
-                                borderRadius='lg'
-                                p='1'
-                            >
-                                <WorkGridItem id="minty~" title="Minty~" thumbnail={thumbMinty}>
-                                    A K-pop based Discord bot with Administration, Music, Greetings and Twitter updates.
-                                </WorkGridItem>
-                            </Box>
-                        </Section>
-                    </Box>
-
-                    <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
-                        <Section>
-                            <Box
-                                mt='1'
-                                as='h4'
-                                lineHeight='tight'
-                                letterSpacing='wide'
-                                borderRadius='lg'
-                                p='1'
-                            >
-                                <WorkGridItem id="lokkowebsite" title="LOKKO Org." thumbnail={thumbLokko}>
-                                    LOKKO Organization's website. Provides information regarding the organization's goals, games, tournaments and news.
-                                </WorkGridItem>
-                            </Box>
-                        </Section>
-                    </Box>
-                </SimpleGrid>
-
-                <Section delay={0.2}>
-                    <Divider my={4} />
-
-                    <Heading as="h3" fontSize={20} mb={4}>
-                        Useful Links
+        <Layout title="Projects">
+            <Container maxW="none" px={0}>
+                <Section delay={0.05} mb={[6, 8]}>
+                    <Heading as="h1" fontSize={['2xl', '3xl']} letterSpacing="-0.02em">
+                        Projects &amp; Links
                     </Heading>
+                    <Text color={mutedText} lineHeight="1.8" mt={4}>
+                        A selection of software, research, and community projects. Some are polished,
+                        some are still teaching me something, and all of them are part of the story.
+                    </Text>
+                </Section>
 
-                    <SimpleGrid columns={[1, 1, 2]} gap={6} >
-                        <Box h="100%" display="flex" flexDirection="column" p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
-                            <Section>
-                                <Box
-                                    mt='1'
-                                    as='h4'
-                                    lineHeight='tight'
-                                    letterSpacing='wide'
-                                    borderRadius='lg'
-                                    p='1'
-                                >
-                                    <WorkGridItem id="emulatorfiles" title="Emulator Files" thumbnail={thumbEmulators}>
-                                        All emulator files I have organized for the people that are quite insecure of installing them online.
-                                    </WorkGridItem>
-                                </Box>
-                            </Section>
-                        </Box>
-
-
-
-                        <Box alignSelf='center' p='3' borderWidth='1px' borderRadius='xl' overflow='hidden' transition='all 0.3s ease' _hover={{ boxShadow: '0 8px 25px rgba(0,0,0,0.1)', transform: 'translateY(-2px)' }} >
-                            <Section>
-                                <Box
-                                    mt='1'
-                                    as='h4'
-                                    lineHeight='tight'
-                                    letterSpacing='wide'
-                                    borderRadius='lg'
-                                    p='1'
-                                >
-                                    <WorkGridItem id="minecraftserver" title="Minecraft Servers" thumbnail={thumbMinecraft}>
-                                        Minecraft servers that are downloadable and ready to setup, these are Forge servers.
-                                    </WorkGridItem>
-                                </Box>
-                            </Section>
-                        </Box>
+                <Section delay={0.12} mb={[6, 8]}>
+                    <Heading as="h2" variant="section-title" mb={4}>
+                        Projects
+                    </Heading>
+                    <SimpleGrid columns={{ base: 1, md: 2 }} gap={[5, 6]}>
+                        {projects.map(project => (
+                            <Box
+                                key={project.id}
+                                borderTop="1px solid"
+                                borderColor={borderColor}
+                                pt={4}
+                            >
+                                <WorkGridItem {...project}>
+                                    {project.description}
+                                </WorkGridItem>
+                            </Box>
+                        ))}
                     </SimpleGrid>
                 </Section>
+
+                <Section delay={0.18}>
+                    <Box borderTop="1px solid" borderColor={borderColor} pt={6}>
+                        <Heading as="h2" variant="section-title" mb={2}>
+                            Useful links
+                        </Heading>
+                        <Text color={mutedText} lineHeight="1.7" mb={6}>
+                            A few practical resources I keep around for game development, emulation,
+                            and playing with friends.
+                        </Text>
+                        <SimpleGrid columns={{ base: 1, md: 2 }} gap={[5, 6]}>
+                            {usefulLinks.map(item => (
+                                <Box key={item.id} borderTop="1px solid" borderColor={borderColor} pt={4}>
+                                    <WorkGridItem {...item}>
+                                        {item.description}
+                                    </WorkGridItem>
+                                </Box>
+                            ))}
+                        </SimpleGrid>
+                    </Box>
+                </Section>
+
             </Container>
         </Layout>
     )

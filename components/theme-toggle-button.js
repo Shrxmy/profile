@@ -1,31 +1,26 @@
-import { TbMoon2 } from "react-icons/tb"
-import { Icon, Switch, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { TbMoon2, TbSun } from 'react-icons/tb'
 
 const ThemeToggleButton = () => {
-    const { toggleColorMode } = useColorMode()
+    const { colorMode, toggleColorMode } = useColorMode()
+    const icon = useColorModeValue(<TbMoon2 />, <TbSun />)
+    const label = colorMode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'
 
-    return (  
-        <Switch 
-            p='2'
-            aria-label="Toggle theme"
-            colorScheme={useColorModeValue('orange', 'purple')}
-            size= "lg"
-            onChange={toggleColorMode}>
-            <Icon as={TbMoon2} height='6'/>
-        </Switch>
+    return (
+        <IconButton
+            aria-label={label}
+            icon={icon}
+            variant="ghost"
+            size="sm"
+            borderRadius="full"
+            onClick={toggleColorMode}
+            color={useColorModeValue('ink.700', 'paper.100')}
+            _hover={{
+                bg: useColorModeValue('blackAlpha.100', 'whiteAlpha.100'),
+                color: useColorModeValue('tea.700', 'tea.300')
+            }}
+        />
     )
 }
 
 export default ThemeToggleButton
-
-{/* <AnimatePresence exitBeforeEnter initial={false}>
-<motion.div
-    style={{ display: 'inline-block' }}
-    key={useColorModeValue('light', 'dark')}
-    initial={{ y: -20, opacity: 0 }}
-    animate={{ y: 0, opacity: 1 }}
-    exit={{ opacity: 0 }}>
-
-
-</motion.div>
-</AnimatePresence> */}

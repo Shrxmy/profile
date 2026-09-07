@@ -4,38 +4,36 @@ import { Text, useColorModeValue } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
-    font-weight: bold;
-    font-size: 18px;
     display: inline-flex;
     align-items: center;
     height: 30px;
     line-height: 20px;
-    padding: 10px;
 
     img {
-        transition: 200ms ease;
+        transition: transform 200ms ease;
     }
 
     &:hover img {
-        transform: rotate(20deg);
+        transform: rotate(12deg) translateY(-1px);
     }
 `
+
 const Logo = () => {
-    const footPrintImg = `/images/mage${useColorModeValue('', '-dark')}.png`
-    
-    return(
+    const footprintImg = `/images/mage${useColorModeValue('', '-dark')}.png`
+
+    return (
         <Link href="/">
-            <a>
+            <a aria-label="Paulo Tumabing home">
                 <LogoBox>
-                    <Image src={footPrintImg} width={20} height={20} alt="logo" />
-                        <Text 
-                            color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                            fontFamily='Arsenal, sans-serif'
-                            fontWeight="bold"
-                            ml={3}
-                        >
-                            Shroomy
-                        </Text>
+                    <Image src={footprintImg} width={22} height={21} alt="" />
+                    <Text
+                        color={useColorModeValue('ink.900', 'paper.100')}
+                        fontFamily="heading"
+                        fontSize="lg"
+                        ml={2}
+                    >
+                        Shroomy
+                    </Text>
                 </LogoBox>
             </a>
         </Link>

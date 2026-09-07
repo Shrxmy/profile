@@ -1,31 +1,58 @@
+import dynamic from 'next/dynamic'
 import NextLink from 'next/link'
 import {
+    Box,
     Button,
     Container,
-    Box,
+    Flex,
     Heading,
     Image,
     Link,
-    List,
-    ListItem,
-    Popover,
-    PopoverArrow,
-    PopoverTrigger,
-    PopoverContent,
-    PopoverHeader,
-    PopoverBody,
-    useColorModeValue,
+    SimpleGrid,
     Text,
-} from "@chakra-ui/react"
-import { ChevronRightIcon } from '@chakra-ui/icons'
+    useColorModeValue
+} from '@chakra-ui/react'
+import { IoLogoGithub, IoLogoLinkedin, IoMail } from 'react-icons/io5'
+import { FiArrowUpRight } from 'react-icons/fi'
 import Layout from '../components/layouts/article'
 import Section from '../components/sections'
-import Paragraph from "../components/paragraphs"
 import { BioSection, BioYear } from '../components/bio'
-import { IoLogoGithub, IoLogoSteam, IoLogoLinkedin, IoMail } from 'react-icons/io5'
+import MushroomLoader from '../components/mushroom-loader'
+
+const LazyMushroom = dynamic(() => import('../components/mushroom'), {
+    ssr: false,
+    loading: () => <MushroomLoader />
+})
+
+const experience = [
+    {
+        dates: 'Aug 2026 — Present',
+        company: 'Angat Buhay Foundation',
+        role: 'Intern · Developer',
+        description: 'Builds full-stack features for Angat Buhay platforms, including ABVN, a real-time partnership portal serving 214 organizations, with PHP, JavaScript, HTML/CSS, and Firebase.'
+    },
+    {
+        dates: 'Jan 2025 — May 2026',
+        company: 'Freelance',
+        role: 'Web Developer',
+        description: 'Delivered end-to-end web solutions across UI/UX, visual design, and backend integrations with SQL, MongoDB, and Firebase.'
+    },
+    {
+        dates: 'Sep 2025 — Oct 2025',
+        company: 'Mobius Engine',
+        role: 'Marketing Analyst',
+        description: 'Expanded awareness and lead generation for an automated job-search platform through targeted outreach.'
+    },
+    {
+        dates: 'Feb 2023 — Mar 2023',
+        company: 'The Medical City Iloilo',
+        role: 'Intern · IT Assistant',
+        description: 'Supported medical and administrative staff through frontline IT troubleshooting and hospital data-system maintenance.'
+    }
+]
 
 const getAge = () => {
-    const birthday = new Date(2005, 3, 25) // April 25, 2005
+    const birthday = new Date(2005, 3, 25)
     const today = new Date()
     let age = today.getFullYear() - birthday.getFullYear()
     const monthDiff = today.getMonth() - birthday.getMonth()
@@ -35,239 +62,254 @@ const getAge = () => {
     return age
 }
 
-const Page = () => {
-    const mutedText = useColorModeValue('gray.600', 'whiteAlpha.700')
+const SocialLink = ({ href, icon, children }) => (
+    <Link
+        href={href}
+        isExternal={!href.startsWith('mailto:')}
+        display="inline-flex"
+        alignItems="center"
+        fontSize="sm"
+        fontWeight="600"
+        color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+        _hover={{ color: 'teal.500', textDecoration: 'none' }}
+    >
+        <Box as={icon} mr={2} color="teal" aria-hidden="true" />
+        {children}
+    </Link>
+)
+
+const Home = () => {
+    const mutedText = useColorModeValue('ink.500', 'whiteAlpha.700')
+    const borderColor = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
+    const softBackground = useColorModeValue('paper.100', 'whiteAlpha.100')
 
     return (
         <Layout>
-            <Container>
-                <Box
-                    p='3'
-                    flexShrink={0}
-                    textAlign="center"
-                >
-                    <Box
-                        display="inline-block"
-                        borderRadius="full"
-                        p="1px"
-                    >
-                        <Image
-                            borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.300')}
-                            borderWidth={2}
-                            borderStyle="solid"
-                            maxWidth="100px"
-                            display="inline-block"
-                            borderRadius="full"
-                            src="/images/paulo.jpg"
-                            alt="Profile Image"
-                        />
-                    </Box>
-                </Box>
+            <Container maxW="none" px={0}>
+                <Section delay={0.05}>
+                    <SimpleGrid columns={{ base: 1, md: 2 }} gap={[10, 16]} alignItems="center">
+                        <Box order={{ base: 2, md: 1 }}>
+                            <Heading as="h1" variant="page-title">
+                                Paulo Tumabing
+                            </Heading>
+                            <Text
+                                mt={5}
+                                maxW="560px"
+                                color={mutedText}
+                                fontSize={['lg', 'xl']}
+                                lineHeight="1.65"
+                            >
+                                I build thoughtful software, explore game systems, and write about
+                                what I learn along the way.
+                            </Text>
+                            <Text mt={4} maxW="520px" color={mutedText} lineHeight="1.8">
+                                Computer Science student at the University of Santo Tomas, usually
+                                found moving between a code editor, a film camera, and a cup of tea.
+                            </Text>
 
-                <Box display={{ md: 'flex' }} textAlign='center' p='2'>
-                    <Box flexGrow={1}>
-                        <Heading as="h2" variant="page-title" letterSpacing="-0.02em">
-                            Hello?
+                            <Flex mt={8} gap={3} wrap="wrap">
+                                <NextLink href="/works" passHref>
+                                    <Button
+                                        as="a"
+                                        bg="teal"
+                                        color="white"
+                                        rightIcon={<FiArrowUpRight />}
+                                        borderRadius="lg"
+                                        _hover={{ bg: 'teal.600', transform: 'translateY(-2px)' }}
+                                        transition="all 0.2s ease"
+                                    >
+                                        Projects &amp; Links
+                                    </Button>
+                                </NextLink>
+                                <NextLink href="/tea-room" passHref>
+                                    <Button
+                                        as="a"
+                                        variant="outline"
+                                        borderColor="teal.500"
+                                        color="teal.700"
+                                        rightIcon={<FiArrowUpRight />}
+                                        borderRadius="lg"
+                                        _hover={{ bg: 'teal.50', transform: 'translateY(-2px)' }}
+                                        transition="all 0.2s ease"
+                                    >
+                                        Tea Room
+                                    </Button>
+                                </NextLink>
+                            </Flex>
+
+                            <Flex mt={8} gap={[4, 6]} wrap="wrap">
+                                <SocialLink href="https://github.com/Shrxmy" icon={IoLogoGithub}>
+                                    GitHub
+                                </SocialLink>
+                                <SocialLink
+                                    href="https://www.linkedin.com/in/paulo-tumabing/"
+                                    icon={IoLogoLinkedin}
+                                >
+                                    LinkedIn
+                                </SocialLink>
+                                <SocialLink
+                                    href="mailto:joevannipaulo0425.tumabing@gmail.com"
+                                    icon={IoMail}
+                                >
+                                    Email
+                                </SocialLink>
+                            </Flex>
+                        </Box>
+
+                        <Box order={{ base: 1, md: 2 }}>
+                            <Box
+                                borderTop="1px solid"
+                                borderLeft="1px solid"
+                                borderColor={borderColor}
+                                p={[3, 5]}
+                                bg={softBackground}
+                            >
+                                <Box position="relative" w="full" pt="100%" overflow="hidden">
+                                    <Image
+                                        src="/images/paulo1.jpg"
+                                        alt="Paulo Tumabing in a casual portrait"
+                                        position="absolute"
+                                        top={0}
+                                        right={0}
+                                        bottom={0}
+                                        left={0}
+                                        w="full"
+                                        h="full"
+                                        objectFit="cover"
+                                        objectPosition="center"
+                                        filter="saturate(0.88)"
+                                    />
+                                </Box>
+                            </Box>
+                        </Box>
+                    </SimpleGrid>
+                </Section>
+
+                <Section delay={0.12}>
+                    <Box borderTop="1px solid" borderColor={borderColor} pt={6}>
+                        <SimpleGrid columns={{ base: 1, md: 2 }} gap={[8, 14]} alignItems="center">
+                            <Box>
+                                <Heading as="h2" variant="section-title">
+                                    Away from the keyboard
+                                </Heading>
+                                <Text color={mutedText} lineHeight="1.9">
+                                    I like projects with a little patience in them: brewing tea, taking
+                                    photos on film, learning a guitar part, or getting lost in a game
+                                    system. Those slower interests often shape how I approach software.
+                                </Text>
+                                <Text color={mutedText} lineHeight="1.9" mt={4}>
+                                    I value meaningful work, continuous learning, and collaborating with
+                                    people who are open to new ideas.
+                                </Text>
+                            </Box>
+                            <Box>
+                                <Heading as="h3" variant="section-title" mb={4}>
+                                    A few facts
+                                </Heading>
+                                <BioSection>
+                                    <BioYear>Age:</BioYear>
+                                    {getAge()}
+                                </BioSection>
+                                <BioSection>
+                                    <BioYear>Gender:</BioYear>
+                                    Male (he/they)
+                                </BioSection>
+                                <BioSection>
+                                    <BioYear>MBTI:</BioYear>
+                                    INFJ
+                                </BioSection>
+                                <BioSection>
+                                    <BioYear>Dreams:</BioYear>
+                                    Future Software Developer
+                                </BioSection>
+                            </Box>
+                        </SimpleGrid>
+                    </Box>
+                </Section>
+
+                <Section delay={0.18}>
+                    <Box borderTop="1px solid" borderColor={borderColor} pt={6}>
+                        <Heading as="h2" variant="section-title">
+                            Work experience
                         </Heading>
-                        <Box
-                            fontSize="sm"
-                            fontWeight="400"
-                            opacity={0.8}
-                            letterSpacing="0.03em"
-                            mt={1}
-                        >
-                            Average B Student (Developer / Teaholic / Caratbit)
+                        <Box borderTop="1px solid" borderColor={borderColor}>
+                            {experience.map(item => (
+                                <Box
+                                    key={`${item.company}-${item.role}`}
+                                    py={5}
+                                    borderBottom="1px solid"
+                                    borderColor={borderColor}
+                                >
+                                    <Flex align="baseline" justify="space-between" gap={4}>
+                                        <Box>
+                                            <Heading as="h3" fontSize="xl">
+                                                {item.role}
+                                            </Heading>
+                                            <Text color="teal.500" fontSize="sm" fontWeight="600" mt={1}>
+                                                {item.company}
+                                            </Text>
+                                        </Box>
+                                        <Text
+                                            color={mutedText}
+                                            fontSize="sm"
+                                            fontFamily="mono"
+                                            textAlign="right"
+                                            flexShrink={0}
+                                        >
+                                            {item.dates}
+                                        </Text>
+                                    </Flex>
+                                    <Text color={mutedText} fontSize="sm" lineHeight="1.65" mt={2}>
+                                        {item.description}
+                                    </Text>
+                                </Box>
+                            ))}
                         </Box>
                     </Box>
-                </Box>
-
-                <Box
-                    borderRadius="lg"
-                    bg="teal"
-                    color="white"
-                    p={3}
-                    mb={4}
-                    align="center"
-                    fontWeight="500"
-                    fontSize="sm"
-                    letterSpacing="0.02em"
-                >
-                    Hello, I&apos;m an average student developer.
-                </Box>
-
-                <Section delay={0.1}>
-                    <Heading as="h3" variant="section-title">
-                        About Me
-                    </Heading>
-                    <Box p='1' />
-                    <Paragraph>
-                        Hello! My name is Paulo, and I am a Computer Science student at the University of Santo Tomas. Over the years, I&apos;ve enjoyed building numerous projects ranging from Discord bots and full-stack web applications to custom Minecraft servers. Currently, my academic and personal focus is on learning modern web development and exploring game design. Programming and making tea are two of my favorite pastimes; both require patience, precision, and yield satisfying results. I am a pragmatic person who prioritizes meaningful work and values continuous learning. I also enjoy collaborating with others and am always open to connecting with new people. Also, I proudly stan LOOΠΔ and SEVENTEEN.
-                    </Paragraph>
-
-                    <Box align="center" my={4}>
-                        <NextLink href="/works" passHref>
-                            <Button
-                                rightIcon={<ChevronRightIcon />}
-                                bg="teal"
-                                color="white"
-                                size="md"
-                                borderRadius="lg"
-                                fontWeight="600"
-                                _hover={{
-                                    transform: 'translateY(-2px)',
-                                    boxShadow: '0 4px 12px rgba(56, 178, 172, 0.3)',
-                                }}
-                                transition="all 0.2s ease"
-                            >
-                                Projects and Links
-                            </Button>
-                        </NextLink>
-                    </Box>
                 </Section>
 
-                <Section delay={0.2}>
-                    <Heading as="h3" variant="section-title">
-                        Bio
-                    </Heading>
-                    <Box p='1' />
-                    <BioSection>
-                        <BioYear>Gender:</BioYear>
-                        Male (he/they)
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>Age:</BioYear>
-                        {getAge()}
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>MBTI:</BioYear>
-                        INFJ
-                    </BioSection>
-                    <BioSection>
-                        <BioYear>Dreams:</BioYear>
-                        Future Software Developer
-                    </BioSection>
-
-                    <Box align="center" my={4}>
-                        <Link href="https://open.spotify.com/user/jptgumban" isExternal>
-                            <Button
-                                rightIcon={<ChevronRightIcon />}
-                                bg="teal"
-                                color="white"
-                                size="md"
-                                borderRadius="lg"
-                                fontWeight="600"
-                                _hover={{
-                                    transform: 'translateY(-2px)',
-                                    boxShadow: '0 4px 12px rgba(56, 178, 172, 0.3)',
-                                }}
-                                transition="all 0.2s ease"
-                            >
-                                Spotify
-                            </Button>
-                        </Link>
+                <Section delay={0.24}>
+                    <Box
+                        borderTop="1px solid"
+                        borderBottom="1px solid"
+                        borderColor={borderColor}
+                        py={5}
+                    >
+                        <SimpleGrid columns={{ base: 1, md: 2 }} gap={4} alignItems="center">
+                            <Box>
+                                <Heading as="h2" variant="section-title" mb={2}>
+                                    A small interactive corner
+                                </Heading>
+                                <Text color={mutedText} lineHeight="1.8" maxW="430px">
+                                    The 3D companion that started this site is still here, now kept
+                                    separate from the main introduction so it can be enjoyed without
+                                    getting in the way.
+                                </Text>
+                            </Box>
+                            <Box h={[220, 260]} overflow="hidden" aria-label="Interactive 3D mushroom model">
+                                <LazyMushroom />
+                            </Box>
+                        </SimpleGrid>
                     </Box>
                 </Section>
 
                 <Section delay={0.3}>
-                    <Heading as="h3" variant="section-title">
-                        Hobbies and Likes
-                    </Heading>
-                    <Box p='1' />
-                    <Text color={mutedText} lineHeight="1.8">
-                        Electric Guitar · Programming · Photography · Practicality · Film Cameras · Music · Final Fantasy · Megami Tensei · Pokemon · JinSoul
-                    </Text>
-                </Section>
-
-                <Section delay={0.3}>
-                    <Heading as="h3" variant="section-title">
-                        Contact Me
-                    </Heading>
-                    <Box p='1' />
-                    <List spacing={1}>
-                        <ListItem>
-                            <Link
-                                href="https://www.linkedin.com/in/paulo-tumabing/"
-                                target="_blank"
-                                color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                                display="inline-flex"
-                                alignItems="center"
-                                _hover={{ textDecoration: 'underline' }}
-                            >
-                                <Box as={IoLogoLinkedin} color="teal" mr={2} />
-                                Paulo Tumabing
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link
-                                href="https://github.com/Shrxmy"
-                                target="_blank"
-                                color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                                display="inline-flex"
-                                alignItems="center"
-                                _hover={{ textDecoration: 'underline' }}
-                            >
-                                <Box as={IoLogoGithub} color="teal" mr={2} />
-                                Shrxmy
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link
-                                href="mailto:joevannipaulo0425.tumabing@gmail.com"
-                                target="_blank"
-                                color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                                display="inline-flex"
-                                alignItems="center"
-                                _hover={{ textDecoration: 'underline' }}
-                            >
-                                <Box as={IoMail} color="teal" mr={2} />
+                    <Box bg={softBackground} p={[6, 8]}>
+                        <Heading as="h2" fontSize={['2xl', '3xl']}>
+                            Have something in mind?
+                        </Heading>
+                        <Text color={mutedText} lineHeight="1.8" mt={3}>
+                            I am always happy to talk about a project, an interesting technical
+                            problem, or a good cup of tea.
+                        </Text>
+                        <Flex mt={5} gap={[4, 6]} wrap="wrap">
+                            <SocialLink href="mailto:joevannipaulo0425.tumabing@gmail.com" icon={IoMail}>
                                 joevannipaulo0425.tumabing@gmail.com
-                            </Link>
-                        </ListItem>
-                        <ListItem>
-                            <Link
-                                href="https://steamcommunity.com/id/shrxmy/"
-                                target="_blank"
-                                color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                                display="inline-flex"
-                                alignItems="center"
-                                _hover={{ textDecoration: 'underline' }}
-                            >
-                                <Box as={IoLogoSteam} color="teal" mr={2} />
-                                Shroomy
-                            </Link>
-                        </ListItem>
-                    </List>
-
-                    <Box align="center" my={4}>
-                        <Popover>
-                            <PopoverTrigger>
-                                <Button
-                                    bg="teal"
-                                    color="white"
-                                    borderRadius="lg"
-                                    size="sm"
-                                    _hover={{
-                                        transform: 'translateY(-1px)',
-                                        boxShadow: '0 2px 8px rgba(56, 178, 172, 0.2)',
-                                    }}
-                                    transition="all 0.2s ease"
-                                >
-                                    Credits
-                                </Button>
-                            </PopoverTrigger>
-                            <PopoverContent borderRadius="xl" boxShadow="lg">
-                                <PopoverArrow />
-                                <PopoverHeader fontSize="medium" fontWeight="600">
-                                    Credits and Inspiration
-                                </PopoverHeader>
-                                <PopoverBody fontSize="sm">
-                                    Inspired by {' '}<Link href="https://www.craftz.dog/">craftzdog</Link>
-                                </PopoverBody>
-                                <PopoverBody fontSize="sm">
-                                    The model is based on {' '}<Link href="https://sketchfab.com/3d-models/yuna-figure-world-of-final-fantasy-9be8455b25ec4e00887657e563f7823a">&quot;Yuna Figure (World of Final Fantasy)&quot;</Link> by {' '}<Link href="https://sketchfab.com/robukan">Robukan</Link> licensed under {' '}<Link href="http://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</Link>
-                                </PopoverBody>
-                            </PopoverContent>
-                        </Popover>
+                            </SocialLink>
+                            <SocialLink href="https://github.com/Shrxmy" icon={IoLogoGithub}>
+                                GitHub / Shrxmy
+                            </SocialLink>
+                        </Flex>
                     </Box>
                 </Section>
             </Container>
@@ -275,5 +317,5 @@ const Page = () => {
     )
 }
 
-export default Page
+export default Home
 export { getServerSideProps } from '../components/chakra'

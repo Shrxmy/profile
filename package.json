@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Paulo's website, improved from last one since this might be used as a portfolio in the future.",
   "scripts": {
     "dev": "next dev -H 0.0.0.0",

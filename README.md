@@ -1,15 +1,15 @@
-# Paulo's Profile Website (v2.0)
+# Paulo's Profile Website (v3.0)
 
-Welcome to **Version 2.0** of my personal portfolio and playground! 
+Welcome to **Version 3.0** of my personal portfolio and playground!
 
 This project was initially inspired by [craftzdog's homepage](https://www.craftz.dog/) and his tutorial on React and Three.js ([video here](https://youtu.be/bSMZgXzC9AA)). Since then, it has evolved significantly into a highly customized, interactive showcase of my work, featuring a fully updated (yet similar) design system and unique interactive components.
 
-## What's New in v2.0?
+## What's New in v3.0?
 
 - **Refreshed Visual Identity**: A richer, warmer color palette, an active teal/cyan/purple glow ecosystem, and customized hobby chips.
 - **Interactive "Tea Room" Playground**: Overhauled the static "Tweet Feeds" into a fully interactive game-dev-themed brewing terminal, boasting over 14 unique programming and K-Pop combinations (each with its own unique theme and animations).
 - **Polished Glassmorphism**: Refined blurring, borders, and shadows on the Navbar, project cards, and bio sections.
-- **Updated Works Roster**: Integrated recent full-stack and React application projects (ShopZada DWH, Bond Calculator, CSS Apply) with perfectly aligned 16:9 thumbnails.
+- **Updated Works Roster**: Integrated recent full-stack and React application projects (ShopZada DWH, Bond Calculator, CSSApply) with perfectly aligned 16:9 thumbnails.
 - **Dependency Clean-up**: Pruned unused modules, safely migrated styling constraints, and updated Next.js to leverage the latest v12 build enhancements.
 
 ## The 3D Model 🍄

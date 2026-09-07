@@ -1,41 +1,29 @@
 import { Box, Container } from '@chakra-ui/react'
-import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Navbar from '../navbar'
 import Footer from '../footer'
-import MushroomLoader from '../mushroom-loader'
 
-const LazyMushroom = dynamic(() => import('../mushroom'), {
-    ssr: false,
-    loading: () => <MushroomLoader />
-})
+const Main = ({ children, router }) => (
+    <Box as="main" minH="100vh" pb={8}>
+        <Head>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta
+                name="description"
+                content="Paulo Tumabing — software developer, student, and writer."
+            />
+            <meta name="author" content="Paulo Tumabing" />
+            <link rel="apple-touch-icon" href="/logol.png" />
+            <link rel="shortcut icon" href="/logol.png" type="image/x-icon" />
+            <title>Paulo Tumabing — Shroomy / Lucete</title>
+        </Head>
 
-const Main = ({ children, router }) => {
-    const hideModel = router.asPath.startsWith('/tea-room')
+        <Navbar path={router.asPath} />
 
-    return (
-        <Box as="main" pb={8}>
-            <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <meta name="description" content="Paulo's homepage" />
-                <meta name="author" content="Paulo Tumabing" />
-                <meta name="author" content="Shroomy" />
-                <link rel="apple-touch-icon" href="logol.png" />
-                <link rel="shortcut icon" href="/logol.png" type="image/x-icon" />
-                <title>Shroomy/Lucete - Homepage</title>
-            </Head>
-
-            <Navbar path={router.asPath} />
-
-            <Container maxW="container.md" pt={14}>
-                {!hideModel && <LazyMushroom />}
-
-                {children}
-
-                <Footer />
-            </Container>
-        </Box>
-    )
-}
+        <Container maxW="container.lg" pt={[20, 24]} px={[4, 6, 8]}>
+            {children}
+            <Footer />
+        </Container>
+    </Box>
+)
 
 export default Main

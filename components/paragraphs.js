@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 const Paragraph = styled.p`
-    text-align: justify;
-    text-indent: 1em;
+    line-height: 1.9;
+    margin-bottom: 1.25em;
 `
 
 export default Paragraph

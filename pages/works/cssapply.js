@@ -6,10 +6,10 @@ import Layout from '../../components/layouts/article';
 
 const Work = () => {
     return (
-        <Layout title="CSS Apply">
+        <Layout title="CSSApply">
             <Container>
                 <Title>
-                    CSS Apply <Badge>2025</Badge>
+                    CSSApply <Badge>2025</Badge>
                 </Title>
                 <Box maxW='xl' borderWidth='4px' borderColor='grey' borderRadius='xl' overflow='hidden'>
                     <Box

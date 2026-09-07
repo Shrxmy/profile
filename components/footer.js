@@ -1,24 +1,26 @@
-import { Box, Divider, useColorModeValue } from '@chakra-ui/react';
+import { Box, Divider, Flex, Text, useColorModeValue } from '@chakra-ui/react'
 
 const Footer = () => {
+    const borderColor = useColorModeValue('blackAlpha.200', 'whiteAlpha.200')
+    const muted = useColorModeValue('gray.600', 'whiteAlpha.600')
+
     return (
-        <Box mt={8}>
-            <Divider
-                borderColor={useColorModeValue('blackAlpha.200', 'whiteAlpha.200')}
-                mb={4}
-            />
-            <Box
-                align="center"
-                opacity={0.5}
-                fontSize="sm"
-                fontWeight="300"
-                letterSpacing="0.02em"
-                pb={4}
+        <Box mt={[12, 20]}>
+            <Divider borderColor={borderColor} mb={4} />
+            <Flex
+                direction={['column', 'row']}
+                justify="space-between"
+                gap={2}
+                fontSize="xs"
+                color={muted}
+                letterSpacing="0.04em"
+                pb={6}
             >
-                &copy; {new Date().getFullYear()} Shroomy/Lucete. All rights reserved. • v2.0
-            </Box>
+                <Text>© {new Date().getFullYear()} Paulo Tumabing</Text>
+                <Text>Built with care · Shroomy / Lucete</Text>
+            </Flex>
         </Box>
     )
 }
 
-export default Footer;
+export default Footer
