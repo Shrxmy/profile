@@ -26,30 +26,26 @@ const Work = () => {
 
                 <Box p='2' />
 
-                <Box maxW='lg' borderWidth='1px' borderColor='grey' borderRadius='xl' overflow='hidden'>
-                    <List ml={30} my={4}>
+                <Box maxW='xl' borderWidth='1px' borderColor='grey' borderRadius='xl' overflow='hidden'>
+                    <List ml={30} mr={4} my={2}>
                         <ListItem>
                             <Meta>Updates:</Meta>
                             <span>
-                                Minty~ is currently offline and will be back soon!(Until I retrive the source code from my old hard drive.)
+                                Minty~ is currently offline and will be back soon! (Until I retrieve the source code from my old hard drive.)
                             </span>
                         </ListItem>
                         <ListItem>
                             <Meta>Used Languages:</Meta>
-                            <span>
-                                Javascript, Node.js
-                            </span>
+                            <span>JavaScript, Node.js</span>
                         </ListItem>
                         <ListItem>
                             <Meta>Database:</Meta>
-                            <span>
-                                SQL and Mongo DB
-                            </span>
+                            <span>SQL and MongoDB</span>
                         </ListItem>
-                        <Meta>Required Permissions:</Meta>
-                        <span>
-                            Administrator
-                        </span>
+                        <ListItem>
+                            <Meta>Required Permissions:</Meta>
+                            <span>Administrator</span>
+                        </ListItem>
                     </List>
                 </Box>
 

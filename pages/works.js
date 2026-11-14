@@ -8,15 +8,29 @@ import {
 } from '@chakra-ui/react'
 import Layout from '../components/layouts/article'
 import Section from '../components/sections'
-import { WorkGridItem } from '../components/grid-item'
+import { GridItem, WorkGridItem } from '../components/grid-item'
 
 const projects = [
+    {
+        id: 'heekki',
+        title: 'Heekki',
+        category: 'Discord bot',
+        thumbnail: '/images/work/heekki.jpg',
+        description: 'A LOONA-themed Discord bot with music, welcome cards, games, member profiles, and lookups.'
+    },
     {
         id: 'agml-densecbam',
         title: 'AGML-DenseCBAM',
         category: 'Machine learning research',
         thumbnail: '/images/work/agml-densecbam.jpg',
         description: 'Attention-guided multi-task learning for TMD classification using panoramic radiographs.'
+    },
+    {
+        id: 'gtd-focalresnet',
+        title: 'GTD-FocalResNet',
+        category: 'Machine learning research',
+        thumbnail: '/images/work/gtd-focalresnet.png',
+        description: 'A residual focal-loss neural model for attack success prediction on the Global Terrorism Database.'
     },
     {
         id: 'emugbds',
@@ -71,18 +85,32 @@ const projects = [
 
 const usefulLinks = [
     {
-        id: 'emulatorfiles',
-        title: 'Emulator Files',
-        category: 'Reference library',
-        thumbnail: '/images/work/emulatorthumb.jpg',
-        description: 'A curated collection of emulator links and notes for people who want a safer starting point.'
+        id: 'dotfiles',
+        title: 'dotfiles',
+        href: 'https://github.com/Shrxmy/dotfiles',
+        thumbnail: '/images/work/dotfiles.png',
+        description: 'My Debian + Hyprland setup: keybinds, zsh, terminal, and battery tweaks. The looks live in u-da-real-ricing.'
     },
     {
-        id: 'minecraftserver',
-        title: 'Minecraft Servers',
-        category: 'Community resource',
-        thumbnail: '/images/work/minecraftthumb.jpg',
-        description: 'Downloadable Forge server setups and practical notes for playing with friends.'
+        id: 'u-da-real-ricing',
+        title: 'u-da-real-ricing',
+        href: 'https://github.com/Shrxmy/u-da-real-ricing',
+        thumbnail: '/images/work/ricing.png',
+        description: 'The looks half of my setup: the retro clean palette, Waybar, Quickshell wallpapers, and notifications.'
+    },
+    {
+        id: 'claude-code-setup',
+        title: 'Claude Code Setup',
+        href: 'https://github.com/Shrxmy/claude-code-setup',
+        thumbnail: '/images/work/claudecodesetup.png',
+        description: 'My Claude Code instructions, settings, plugins, and skills, with a one-command installer.'
+    },
+    {
+        id: 'my-pi-configs',
+        title: 'Pi Setup',
+        href: 'https://github.com/Shrxmy/my-pi-configs',
+        thumbnail: '/images/work/pisetup.png',
+        description: 'My pi agent config: retro-clean theme, subagents, workflows, background terminals, and skills.'
     }
 ]
 
@@ -129,15 +157,14 @@ const Works = () => {
                             Useful links
                         </Heading>
                         <Text color={mutedText} lineHeight="1.7" mb={6}>
-                            A few practical resources I keep around for game development, emulation,
-                            and playing with friends.
+                            The configs I actually use day to day: my desktop, terminal, and coding agents.
                         </Text>
                         <SimpleGrid columns={{ base: 1, md: 2 }} gap={[5, 6]}>
                             {usefulLinks.map(item => (
                                 <Box key={item.id} borderTop="1px solid" borderColor={borderColor} pt={4}>
-                                    <WorkGridItem {...item}>
+                                    <GridItem {...item}>
                                         {item.description}
-                                    </WorkGridItem>
+                                    </GridItem>
                                 </Box>
                             ))}
                         </SimpleGrid>
