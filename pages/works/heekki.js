@@ -1,6 +1,6 @@
 import { Container, Badge, Link, List, ListItem, Box } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Title, WorkImage, Meta } from '../../components/pageprops'
+import { Title, Meta } from '../../components/pageprops'
 import P from '../../components/paragraphs'
 import Layout from '../../components/layouts/article'
 
@@ -40,10 +40,6 @@ const Work = () => {
                         </ListItem>
                     </List>
                 </Box>
-
-                <Box p={2} />
-
-                <WorkImage src="/images/work/heekki.jpg" alt="Heekki" />
             </Container>
         </Layout>
     )

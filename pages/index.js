@@ -29,7 +29,7 @@ const experience = [
         dates: 'Aug 2026 — Present',
         company: 'Angat Buhay Foundation',
         role: 'Intern · Developer',
-        description: 'Builds full-stack features for Angat Buhay platforms, including ABVN, a real-time partnership portal serving 214 organizations, with PHP, JavaScript, HTML/CSS, and Firebase.'
+        description: 'Builds full-stack features for Angat Buhay platforms, including ABVN, a real-time partnership portal serving 213 organizations, with PHP, JavaScript, HTML/CSS, and Firebase.'
     },
     {
         dates: 'Jan 2025 — May 2026',

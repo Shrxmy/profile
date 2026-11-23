@@ -40,6 +40,13 @@ const projects = [
         description: 'A clean-room emulator host focused on in-house GBA and DS core development.'
     },
     {
+        id: 'evosys',
+        title: 'UST EVoSys 2.0',
+        category: 'Web application',
+        thumbnail: '/images/work/evosys.png',
+        description: 'A Next.js and PostgreSQL rewrite of a legacy ASP.NET voting system, with transactional ballots and private receipts.'
+    },
+    {
         id: 'cssapply',
         title: 'CSSApply',
         category: 'Web application',
